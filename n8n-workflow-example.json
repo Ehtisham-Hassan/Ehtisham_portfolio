@@ -1,0 +1,96 @@
+{
+  "name": "Portfolio Lead Management",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "portfolio-leads",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": "={{ $json.timestamp }}",
+        "dataToSend": "={{ { userMessage: $json.userMessage, aiResponse: $json.aiResponse, timestamp: $json.timestamp, userAgent: $json.userAgent, ip: $json.ip } }}",
+        "options": {}
+      },
+      "id": "google-sheets",
+      "name": "Log to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "sendEmail",
+        "toEmail": "ehtisham@example.com",
+        "subject": "New Portfolio Lead: {{ $json.userMessage }}",
+        "text": "New lead from portfolio website:\n\nUser Message: {{ $json.userMessage }}\nAI Response: {{ $json.aiResponse }}\nTimestamp: {{ $json.timestamp }}\nUser Agent: {{ $json.userAgent }}\nIP: {{ $json.ip }}",
+        "options": {}
+      },
+      "id": "gmail-notification",
+      "name": "Send Email Notification",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "tableId": "your-airtable-base-id",
+        "dataToSend": "={{ { userMessage: $json.userMessage, aiResponse: $json.aiResponse, timestamp: $json.timestamp, status: 'New Lead' } }}",
+        "options": {}
+      },
+      "id": "airtable-lead",
+      "name": "Store in Airtable",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2,
+      "position": [900, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Log to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log to Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Send Email Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email Notification": {
+      "main": [
+        [
+          {
+            "node": "Store in Airtable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+} 
