@@ -97,7 +97,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -106,8 +106,8 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Featured <span className="gradient-text">Projects</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-dev2c-text">
+            Featured <span className="text-dev2c-textmuted">Projects</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Real-world solutions that demonstrate the power of AI agents and automation. 
@@ -155,7 +155,7 @@ const Projects = () => {
               <div className="card h-full hover:scale-105 transition-transform duration-300">
                 {/* Project Image */}
                 <div className="relative mb-6 overflow-hidden rounded-lg">
-                  <div className="w-full h-48 bg-gradient-to-br from-primary-100 to-purple-100 dark:from-primary-900 dark:to-purple-900 flex items-center justify-center">
+                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         {project.category === 'AI Agent' && <Bot className="w-8 h-8 text-white" />}

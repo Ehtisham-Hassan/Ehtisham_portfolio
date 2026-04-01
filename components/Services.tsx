@@ -10,21 +10,21 @@ const Services = () => {
       title: 'Custom AI Agents',
       description: 'Intelligent chatbots and virtual assistants powered by local LLMs like Ollama. Perfect for customer support, data analysis, and task automation.',
       features: ['GPT-based agents', 'Workflow agents', 'Voice-enabled chatbots', 'Multi-modal AI'],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'bg-dev2c-text'
     },
     {
       icon: Zap,
       title: 'Workflow Automation',
       description: 'End-to-end automation solutions using n8n to streamline your business processes and eliminate repetitive tasks.',
       features: ['Slack bots', 'CRM automation', 'Notion integration', 'Email workflows'],
-      color: 'from-purple-500 to-pink-500'
+      color: 'bg-dev2c-text'
     },
     {
       icon: Code,
       title: 'API Solutions',
       description: 'Custom API development and integration services using modern frameworks like FastAPI and LangChain.',
       features: ['LangChain integration', 'Pinecone vector DBs', 'Custom APIs', 'Third-party integrations'],
-      color: 'from-green-500 to-emerald-500'
+      color: 'bg-dev2c-text'
     }
   ]
 
@@ -50,7 +50,7 @@ const Services = () => {
   }
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,8 +59,8 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            My <span className="gradient-text">Services</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-dev2c-text">
+            Our <span className="text-dev2c-textmuted">Services</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             I specialize in building intelligent automation solutions that transform how businesses operate. 
@@ -83,7 +83,7 @@ const Services = () => {
             >
               <div className="card h-full hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center mb-6">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center mr-4`}>
+                  <div className={`w-12 h-12 rounded-lg ${service.color} flex items-center justify-center mr-4`}>
                     <service.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -118,8 +118,8 @@ const Services = () => {
           className="mt-20"
         >
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold mb-4">
-              Technologies I <span className="gradient-text">Master</span>
+            <h3 className="text-2xl font-bold mb-4 text-dev2c-text">
+              Technologies We <span className="text-dev2c-textmuted">Master</span>
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
               Built with cutting-edge tools and frameworks for maximum performance and reliability
@@ -142,8 +142,8 @@ const Services = () => {
                 whileHover={{ scale: 1.05 }}
                 className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
               >
-                <tech.icon className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2" />
-                <span className="text-xs font-medium text-gray-700 dark:text-gray-300 text-center">
+                <tech.icon className="w-8 h-8 text-dev2c-text mb-2" />
+                <span className="text-xs font-medium text-dev2c-textmuted text-center">
                   {tech.name}
                 </span>
               </motion.div>
@@ -159,14 +159,14 @@ const Services = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-dev2c-text rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
               Ready to Transform Your Business?
             </h3>
             <p className="text-lg mb-6 opacity-90">
               Let's discuss how AI agents and automation can streamline your operations and boost productivity.
             </p>
-            <button className="bg-white text-primary-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+            <button className="bg-white text-dev2c-textmuted font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-md">
               Book Free Consultancy Call
             </button>
           </div>

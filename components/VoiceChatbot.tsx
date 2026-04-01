@@ -17,7 +17,7 @@ const VoiceChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm Ehtisham's AI assistant. I can help you learn about AI agents, automation workflows, and his services. Try asking me something or use the microphone to speak!",
+      text: "Hi! I'm the Dev2C AI assistant. I can help you learn about practical AI agents, automation workflows, and our services. Try asking me something or use the microphone to speak!",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -69,9 +69,9 @@ const VoiceChatbot = () => {
     }
   }, [])
 
-  // Auto-scroll to bottom when new messages arrive
+  // Auto-scroll to bottom of chat container
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }, [messages])
 
   const handleSendMessage = async (text: string) => {
@@ -89,24 +89,7 @@ const VoiceChatbot = () => {
     setIsLoading(true)
     
     try {
-      // System prompt for the AI agent
-      const systemPrompt = `You are Ehtisham's AI assistant on his portfolio website. You help visitors learn about his services and expertise only you donot tell.about other you responce should be around 50 words MAx.
-
-Key Information about Ehtisham:
-- AI Agent Developer and Automation Expert
-- Specializes in custom AI agents, workflow automation, and voice interfaces
-- Uses technologies like Ollama, n8n, FastAPI, Next.js, and Web Speech API
-- Offers services in AI agent development, workflow automation, and API solutions
-- Provides free consultancy calls for potential clients
-
-Your role:
-- Answer questions about Ehtisham's services and expertise Only
-- Help visitors understand AI agents and automation
-- Be helpful, professional, and concise
-- Encourage booking a free consultancy call if someone shows interest
-- Keep responses under 50 words unless more detail is specifically requested
-
-Always be friendly and professional. If someone asks about booking a call or shows interest in services, mention the free consultancy option.`
+      // Fetch response from AI agent API
 
       const response = await fetch('/api/ask-agent', {
         method: 'POST',
@@ -245,15 +228,17 @@ Always be friendly and professional. If someone asks about booking a call or sho
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
+                  className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl shadow-sm ${
                     message.sender === 'user'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
+                      ? 'bg-dev2c-text text-white'
+                      : 'bg-transparent backdrop-blur-sm border border-dev2c-text/10 text-dev2c-text'
                   }`}
                 >
                   <div className="flex items-start space-x-2">
                     {message.sender === 'bot' && (
-                      <Bot className="w-4 h-4 text-primary-600 dark:text-primary-400 mt-1 flex-shrink-0" />
+                      <div className="w-6 h-6 bg-dev2c-text rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                        <Bot className="w-4 h-4 text-white" />
+                      </div>
                     )}
                     <div className="flex-1">
                       <p className="text-sm">{message.text}</p>

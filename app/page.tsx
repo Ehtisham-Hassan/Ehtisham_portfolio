@@ -2,15 +2,16 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { 
-  Mic, 
-  MicOff, 
-  MessageCircle, 
-  Calendar, 
-  Eye, 
-  Bot, 
-  Zap, 
-  Code, 
+import Image from 'next/image'
+import {
+  Mic,
+  MicOff,
+  MessageCircle,
+  Calendar,
+  Eye,
+  Bot,
+  Zap,
+  Code,
   Database,
   Github,
   Linkedin,
@@ -44,89 +45,83 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-dev2c-bg">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto text-center">
+      <section className="relative min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-dev2c-bg">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* Left Column (Text) */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="flex flex-col items-start text-left"
           >
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="gradient-text">I Build Custom AI Agents</span>
-              <br />
-              <span className="text-gray-800 dark:text-gray-200">
-                & Automation Workflows That Work
-              </span>
+            <span className="text-sm font-semibold text-dev2c-textmuted mb-6 uppercase tracking-wider">
+              Welcome to Dev2c
+            </span>
+            <h2>Disciplined</h2>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight text-dev2c-text leading-tight">
+              Freelancers.
             </h1>
-            
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Transform your business with intelligent automation powered by local AI agents, 
-              voice interfaces, and seamless workflow integration.
+            <p>buikding AI Agents for your business</p>
+
+            <p className="text-lg sm:text-xl text-dev2c-textmuted mb-10 max-w-2xl leading-relaxed">
+              We specialize in practical AI agents that deliver real-world results, measurable and undeniable.
+              Transform your business with intelligent automation powered by local AI agents and seamless workflow integration.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <button 
-                onClick={() => scrollToSection('voice-chatbot')}
-                className="btn-primary flex items-center gap-2 group"
-              >
-                <Mic className="w-5 h-5 group-hover:animate-pulse" />
-                🎙️ Talk to My Agent
-              </button>
-              
-              <button 
-                onClick={handleBookCall}
-                className="btn-secondary flex items-center gap-2"
-              >
-                <Calendar className="w-5 h-5" />
-                📅 Book Free Consultancy
-              </button>
-              
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="btn-secondary flex items-center gap-2"
-              >
-                <Eye className="w-5 h-5" />
-                👀 See My Work
-              </button>
-            </div>
-            
-            {/* Tech Stack Badges */}
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {['Ollama', 'n8n', 'Web Speech API', 'FastAPI', 'Next.js', 'Tailwind'].map((tech) => (
-                <span 
-                  key={tech}
-                  className="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <button 
-              onClick={() => scrollToSection('voice-chatbot')}
-              className="animate-bounce-slow p-4 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300"
+
+            <button
+              onClick={handleBookCall}
+              className="bg-dev2c-text text-white font-medium py-4 px-8 rounded-full hover:bg-dev2c-text/90 transition-colors duration-300 shadow-md"
             >
-              <ChevronDown className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+              Book a Call
             </button>
           </motion.div>
+
+          {/* Right Column (Bento Grid) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 gap-4 h-full"
+          >
+            {/* Top Left (Ehtisham) */}
+            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10">
+              <Image src="/images/ehtisham.png" alt="Ehtisham" fill className="object-cover" />
+            </div>
+
+            {/* Top Right (Tahir) */}
+            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10">
+              <Image src="/images/tahir.png" alt="Tahir" fill className="object-cover" />
+            </div>
+
+            {/* Bottom Row */}
+            <div className="col-span-2 aspect-[3/1] rounded-lg overflow-hidden relative shadow-lg bg-dev2c-text border border-dev2c-text/10">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-80"
+              >
+                <source src="/video/landing.mp4" type="video/mp4" />
+              </video>
+              {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                <div className="px-6 py-3 bg-black/40 backdrop-blur-md rounded-lg border border-dev2c-textmuted/50 text-white font-medium shadow-lg">
+                  Discover our custom-built AI agents in action
+                </div>
+              </div> */}
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
       {/* Voice Chatbot Section */}
-      <section id="voice-chatbot" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+      <section id="voice-chatbot" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -135,15 +130,15 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Experience My <span className="gradient-text">Voice AI Agent</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-dev2c-text">
+              Experience Our <span className="text-dev2c-textmuted">Voice AI Agent</span>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Powered by Ollama running locally on my server. Ask me about AI agents, 
-              automation workflows, or my services!
+            <p className="text-xl text-dev2c-textmuted max-w-2xl mx-auto">
+              Powered by Ollama running locally on our server. Ask me about AI agents,
+              automation workflows, or our services!
             </p>
           </motion.div>
-          
+
           <VoiceChatbot />
         </div>
       </section>
@@ -152,7 +147,7 @@ export default function Home() {
       <Services />
 
       {/* Projects Section */}
-      <Projects />
+      {/* <Projects /> */}
 
       {/* About Section */}
       <About />

@@ -60,8 +60,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'ehtisham@example.com',
-      link: 'mailto:ehtisham@example.com'
+      value: 'contact@dev2c.com',
+      link: 'mailto:contact@dev2c.com'
     },
     {
       icon: Phone,
@@ -78,7 +78,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-dev2c-footer text-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,10 +87,10 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Let's <span className="gradient-text">Connect</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+            Let's <span className="text-dev2c-textmuted">Connect</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Ready to transform your business with AI agents and automation? 
             Let's discuss your project and explore how we can work together.
           </p>
@@ -105,8 +105,8 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <div className="card">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                Send Me a Message
+              <h3 className="text-2xl font-bold mb-6 text-white">
+                Send Us a Message
               </h3>
               
               {isSubmitted ? (
@@ -119,8 +119,8 @@ const Contact = () => {
                   <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     Message Sent!
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Thank you for reaching out. I'll get back to you within 24 hours.
+                  <p className="text-gray-300 mb-4">
+                    Thank you for reaching out. We'll get back to you within 24 hours.
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
@@ -228,7 +228,7 @@ const Contact = () => {
           >
             {/* Contact Information */}
             <div className="card">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-6 text-white">
                 Get in Touch
               </h3>
               <div className="space-y-4">
@@ -241,22 +241,22 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="flex items-center space-x-4"
                   >
-                    <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
-                      <info.icon className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                    <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                      <info.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900 dark:text-white">
+                      <h4 className="font-medium text-white">
                         {info.title}
                       </h4>
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                          className="text-gray-300 hover:text-white transition-colors duration-200"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-gray-600 dark:text-gray-300">
+                        <p className="text-gray-300">
                           {info.value}
                         </p>
                       )}
@@ -267,7 +267,7 @@ const Contact = () => {
             </div>
 
             {/* Free Consultancy CTA */}
-            <div className="card bg-gradient-to-r from-primary-600 to-purple-600 text-white">
+            <div className="card bg-dev2c-text text-white">
               <div className="text-center">
                 <Calendar className="w-12 h-12 mx-auto mb-4 text-white" />
                 <h3 className="text-2xl font-bold mb-4">
@@ -278,7 +278,7 @@ const Contact = () => {
                 </p>
                 <button
                   onClick={handleBookCall}
-                  className="bg-white text-primary-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center space-x-2 mx-auto"
+                  className="bg-white text-dev2c-text font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center space-x-2 mx-auto"
                 >
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Call</span>
@@ -288,11 +288,11 @@ const Contact = () => {
 
             {/* Response Time */}
             <div className="card text-center">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <h4 className="text-lg font-semibold text-white mb-2">
                 Response Time
               </h4>
               <p className="text-gray-600 dark:text-gray-300">
-                I typically respond to messages within <span className="font-semibold text-primary-600">24 hours</span>
+                We typically respond to messages within <span className="font-semibold text-dev2c-textmuted">24 hours</span>
               </p>
             </div>
           </motion.div>
@@ -308,7 +308,7 @@ const Contact = () => {
         >
           <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
             <p className="text-gray-600 dark:text-gray-300">
-              © 2024 Ehtisham. All rights reserved. | Built with Next.js, Tailwind CSS, and ❤️
+              © 2024 Dev2c. All rights reserved. | Built with Next.js, Tailwind CSS, and ❤️
             </p>
           </div>
         </motion.div>

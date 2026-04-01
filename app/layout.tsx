@@ -6,20 +6,22 @@ import { Toaster } from 'react-hot-toast'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ehtisham - AI Agent Developer & Automation Expert',
+  // title: 'Ehtisham - AI Agent Developer & Automation Expert',
+  title: 'Dev2c',
   description: 'I Build Custom AI Agents & Automation Workflows That Work. Specializing in Ollama, n8n, and voice-enabled AI solutions.',
+  // description:`Build AI That Powers Your Business`,
   keywords: 'AI Agent, Automation, Ollama, n8n, Voice AI, Chatbot, Developer, Portfolio',
-  authors: [{ name: 'Ehtisham' }],
+  authors: [{ name: 'Dev2C' }],
   openGraph: {
-    title: 'Ehtisham - AI Agent Developer & Automation Expert',
-    description: 'I Build Custom AI Agents & Automation Workflows That Work',
+    title: 'Dev2C - AI Agent Developer & Automation',
+    description: 'We Build Custom AI Agents & Automation Workflows That Work',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ehtisham - AI Agent Developer & Automation Expert',
-    description: 'I Build Custom AI Agents & Automation Workflows That Work',
+    title: 'Dev2C - AI Agent Developer & Automation',
+    description: 'We Build Custom AI Agents & Automation Workflows That Work',
   },
 }
 
@@ -30,27 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  
-                  if (theme === 'dark' || (!theme && systemPrefersDark)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-dev2c-bg text-dev2c-text antialiased`}>
         {children}
         <Toaster 
           position="top-right"

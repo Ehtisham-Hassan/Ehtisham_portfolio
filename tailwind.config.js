@@ -10,6 +10,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        dev2c: {
+          bg: '#E5E5E5',
+          header: '#DDDBD8',
+          text: '#12181A',
+          textmuted: '#898989',
+          footer: '#12181A',
+        },
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
