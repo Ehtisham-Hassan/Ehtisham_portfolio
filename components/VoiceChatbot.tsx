@@ -71,7 +71,9 @@ const VoiceChatbot = () => {
 
   // Auto-scroll to bottom of chat container
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    if (messages.length > 1) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }
   }, [messages])
 
   const handleSendMessage = async (text: string) => {

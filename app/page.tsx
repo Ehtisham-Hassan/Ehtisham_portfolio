@@ -89,13 +89,35 @@ export default function Home() {
             className="grid grid-cols-2 gap-4 h-full"
           >
             {/* Top Left (Ehtisham) */}
-            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10">
-              <Image src="/images/ehtisham.png" alt="Ehtisham" fill className="object-cover" />
+            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group">
+              <Image src="/images/ehtisham.png" alt="Ehtisham" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
+                <a href="mailto:ehtisham@dev2c.com" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
+                  <Mail className="w-6 h-6" />
+                </a>
+                <a href="https://linkedin.com/in/ehtisham" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="LinkedIn">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a href="https://github.com/ehtisham" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="GitHub">
+                  <Github className="w-6 h-6" />
+                </a>
+              </div>
             </div>
 
             {/* Top Right (Tahir) */}
-            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10">
-              <Image src="/images/tahir.png" alt="Tahir" fill className="object-cover" />
+            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group">
+              <Image src="/images/tahir.png" alt="Tahir" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
+                <a href="mailto:tahir@dev2c.com" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
+                  <Mail className="w-6 h-6" />
+                </a>
+                <a href="https://linkedin.com/in/tahir" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="LinkedIn">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a href="https://github.com/tahir" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="GitHub">
+                  <Github className="w-6 h-6" />
+                </a>
+              </div>
             </div>
 
             {/* Bottom Row */}
@@ -150,7 +172,7 @@ export default function Home() {
       {/* <Projects /> */}
 
       {/* About Section */}
-      <About />
+      {/* <About /> */}
 
       {/* Contact Section */}
       <Contact />
