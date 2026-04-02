@@ -63,8 +63,7 @@ const Services = () => {
             Our <span className="text-dev2c-textmuted">Services</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            I specialize in building intelligent automation solutions that transform how businesses operate. 
-            From AI agents to workflow automation, I deliver results that work.
+            Direct access to the founders. No account managers, just world-class engineering
           </p>
         </motion.div>
 

@@ -17,7 +17,7 @@ const VoiceChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm the Dev2C AI assistant. I can help you learn about practical AI agents, automation workflows, and our services. Try asking me something or use the microphone to speak!",
+      text: "Hello! Welcome to Dev2c's portfolio website. We're a team of AI agent developers and automation experts. How can I help you today? Are you looking to learn more about custom AI agents, workflow automation, or voice interfaces?",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -91,8 +91,6 @@ const VoiceChatbot = () => {
     setIsLoading(true)
     
     try {
-      // Fetch response from AI agent API
-
       const response = await fetch('/api/ask-agent', {
         method: 'POST',
         headers: {
@@ -187,18 +185,29 @@ const VoiceChatbot = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="card">
+    <div className="max-w-4xl mx-auto relative group">
+      
+      {/* Decorative gradient blur behind the luxury container */}
+      {/* <div className="absolute -inset-1 bg-gradient-to-r from-[#1B4332] to-[#B8860B] rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+       */}
+       <div className="absolute -inset-1 bg-[#183C2D] rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+   
+      {/* Container Design: Glassmorphism over subtle dark gradient */}
+      {/* <div className="relative bg-gradient-to-br from-[#12181A] to-[#1A1F24] backdrop-blur-xl rounded-[2rem] border border-white/10 p-6 sm:p-10 shadow-2xl overflow-hidden"> */}
+         {/* Container Design */}
+      <div className="relative bg-[#12181A] backdrop-blur-xl rounded-[2rem] border border-[#DDDBD8]/10 p-6 sm:p-10 shadow-2xl overflow-hidden">
+      
+
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
-              <Bot className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+        <div className="flex items-center justify-between mb-8 pb-6 border-b border-[#DDDBD8]/10">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-[#183C2D] rounded-full flex items-center justify-center shadow-lg shadow-[#183C2D]/30">
+              <Bot className="w-6 h-6 text-[#DDDBD8]" />
             </div>
             <div>
-              <h3 className="font-semibold text-lg">AI Assistant</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Powered by Hugging Face • Llama 3.1
+              <h3 className="font-semibold text-xl text-[#E5E5E5] tracking-wide">AI Concierge</h3>
+              <p className="text-sm text-[#DDDBD8]/50 font-light mt-1">
+                Enterprise-Grade Privacy: Your business data never leaves our secure environment.
               </p>
             </div>
           </div>
@@ -206,10 +215,10 @@ const VoiceChatbot = () => {
           <div className="flex items-center space-x-2">
             <button
               onClick={toggleMute}
-              className={`p-2 rounded-lg transition-colors duration-200 ${
+              className={`p-3 rounded-xl transition-all duration-300 ${
                 isMuted 
-                  ? 'bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-400' 
-                  : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  ? 'bg-red-500/20 text-red-400 border border-red-500/30' 
+                  : 'bg-[#DDDBD8]/5 text-[#DDDBD8]/70 hover:bg-[#DDDBD8]/10 hover:text-[#E5E5E5] border border-[#DDDBD8]/5'
               }`}
               title={isMuted ? 'Unmute' : 'Mute'}
             >
@@ -218,40 +227,79 @@ const VoiceChatbot = () => {
           </div>
         </div>
 
+        {/* Hero Area - The Voice Visualizer & Big Mic */}
+        <div className="flex flex-col items-center justify-center py-6 mb-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={toggleListening}
+            className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl relative z-10 ${
+              isListening
+                ? 'bg-red-500 text-[#E5E5E5] shadow-red-500/40'
+                : 'bg-[#183C2D] text-[#DDDBD8] shadow-[#183C2D]/40 hover:bg-[#123524]'
+            }`}
+          >
+            {isListening ? <MicOff className="w-8 h-8 sm:w-10 sm:h-10" /> : <Mic className="w-8 h-8 sm:w-10 sm:h-10" />}
+          </motion.button>
+          
+          {/* Visualizer Pulse when Listening */}
+          <div className="h-16 mt-6 flex items-center justify-center space-x-1.5 opacity-80">
+            {isListening ? (
+              [1, 2, 3, 4, 5, 6, 7].map((i) => (
+                <motion.div
+                  key={i}
+                  className="w-1.5 bg-[#DDDBD8]"
+                  animate={{ height: ["20%", "100%", "20%"] }}
+                  transition={{
+                    duration: 0.6 + (i * 0.1),
+                    repeat: Infinity,
+                    delay: i * 0.1,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))
+             ) : (
+               <div className="text-[#DDDBD8]/40 font-light text-sm tracking-widest uppercase">
+                  Press Mic to Speak
+               </div>
+             )}
+          </div>
+        </div>
+
         {/* Messages */}
-        <div className="h-96 overflow-y-auto mb-4 space-y-4">
+        <div className="h-80 overflow-y-auto mb-6 pr-2 space-y-6 custom-scrollbar">
           <AnimatePresence>
             {messages.map((message) => (
               <motion.div
                 key={message.id}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl shadow-sm ${
+                  className={`max-w-[85%] lg:max-w-[75%] px-5 py-4 rounded-3xl shadow-sm ${
                     message.sender === 'user'
-                      ? 'bg-dev2c-text text-white'
-                      : 'bg-transparent backdrop-blur-sm border border-dev2c-text/10 text-dev2c-text'
+                      ? 'bg-[#183C2D] text-[#E5E5E5] rounded-br-sm'
+                      : 'bg-[#DDDBD8]/5 backdrop-blur-md border border-[#DDDBD8]/10 text-[#E5E5E5] rounded-bl-sm'
                   }`}
                 >
-                  <div className="flex items-start space-x-2">
+                  <div className="flex items-start space-x-3">
                     {message.sender === 'bot' && (
-                      <div className="w-6 h-6 bg-dev2c-text rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
-                        <Bot className="w-4 h-4 text-white" />
+                      <div className="w-8 h-8 bg-[#DDDBD8]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                        <Bot className="w-4 h-4 text-[#DDDBD8]" />
                       </div>
                     )}
                     <div className="flex-1">
-                      <p className="text-sm">{message.text}</p>
+                      <p className="text-[15px] leading-relaxed font-light">{message.text}</p>
                       {mounted && (
-                        <p className="text-xs opacity-70 mt-1">
-                          {message.timestamp.toLocaleTimeString()}
+                        <p className="text-[10px] opacity-40 mt-2 font-medium tracking-wide">
+                          {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </p>
                       )}
                     </div>
                     {message.sender === 'user' && (
-                      <User className="w-4 h-4 text-white mt-1 flex-shrink-0" />
+                      <User className="w-4 h-4 text-[#DDDBD8]/50 mt-1 flex-shrink-0" />
                     )}
                   </div>
                 </div>
@@ -265,10 +313,12 @@ const VoiceChatbot = () => {
               animate={{ opacity: 1, y: 0 }}
               className="flex justify-start"
             >
-              <div className="bg-gray-100 dark:bg-gray-700 px-4 py-3 rounded-2xl">
-                <div className="flex items-center space-x-2">
-                  <Loader2 className="w-4 h-4 animate-spin text-primary-600" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">AI is thinking...</span>
+              <div className="bg-[#DDDBD8]/5 border border-[#DDDBD8]/5 px-5 py-4 rounded-3xl rounded-bl-sm">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-[#DDDBD8]/10 rounded-full flex items-center justify-center">
+                    <Loader2 className="w-4 h-4 animate-spin text-[#DDDBD8]" />
+                  </div>
+                  <span className="text-sm font-light text-[#DDDBD8]/60">Concierge is typing...</span>
                 </div>
               </div>
             </motion.div>
@@ -277,15 +327,32 @@ const VoiceChatbot = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input */}
-        <div className="flex items-center space-x-3">
+        {/* Floating Example Tags */}
+        <div className="flex flex-wrap gap-2 md:gap-4 mb-4 justify-center">
+          {[
+            "How do you handle late-night leads?",
+            "Can you book a viewing for me?",
+            "Qualify a high-net-worth buyer"
+          ].map((tag) => (
+            <button
+              key={tag}
+              onClick={() => handleSendMessage(tag)}
+              className="text-xs sm:text-sm px-4 py-2 rounded-full border border-[#DDDBD8]/20 bg-[#DDDBD8]/5 hover:bg-[#DDDBD8]/10 text-[#E5E5E5] transition-all font-light tracking-wide shadow-sm"
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
+        {/* Input Text Fallback */}
+        <div className="flex items-center gap-3">
           <div className="flex-1 relative">
             <textarea
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Type your message or use the microphone..."
-              className="w-full px-4 py-3 pr-12 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+              placeholder="Prefer typing? Send a message..."
+              className="w-full px-5 py-4 border border-[#DDDBD8]/10 rounded-xl focus:ring-1 focus:ring-[#DDDBD8] focus:border-[#DDDBD8] bg-[#DDDBD8]/5 text-[#E5E5E5] placeholder-[#DDDBD8]/40 resize-none font-light transition-all"
               rows={1}
               disabled={isLoading}
             />
@@ -294,27 +361,12 @@ const VoiceChatbot = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={toggleListening}
-            disabled={isLoading}
-            className={`p-3 rounded-lg transition-all duration-200 ${
-              isListening
-                ? 'bg-red-500 text-white animate-pulse'
-                : 'bg-primary-600 text-white hover:bg-primary-700'
-            } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
-            title={isListening ? 'Stop listening' : 'Start voice input'}
-          >
-            {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
-          </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             onClick={() => handleSendMessage(inputText)}
             disabled={!inputText.trim() || isLoading}
-            className={`p-3 rounded-lg transition-all duration-200 ${
+            className={`p-4 rounded-xl transition-all duration-300 ${
               inputText.trim() && !isLoading
-                ? 'bg-primary-600 text-white hover:bg-primary-700'
-                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                ? 'bg-[#183C2D] text-[#DDDBD8] shadow-lg hover:bg-[#123524]'
+                : 'bg-[#DDDBD8]/5 text-[#DDDBD8]/30 cursor-not-allowed'
             }`}
             title="Send message"
           >
@@ -322,37 +374,26 @@ const VoiceChatbot = () => {
           </motion.button>
         </div>
 
-        {/* Status indicators */}
-        <div className="flex items-center justify-between mt-4 text-xs text-gray-500 dark:text-gray-400">
-          <div className="flex items-center space-x-4">
-            {isListening && (
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                <span>Listening...</span>
-              </div>
-            )}
-            {isSpeaking && (
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span>Speaking...</span>
-              </div>
-            )}
-            {isMuted && (
-              <div className="flex items-center space-x-1">
-                <VolumeX className="w-3 h-3" />
-                <span>Muted</span>
-              </div>
-            )}
-          </div>
-          
-          <div className="flex items-center space-x-2">
-            <span>Powered by Hugging Face</span>
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-          </div>
-        </div>
       </div>
+      
+      {/* Hidden scrollbar styles */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(221, 219, 216, 0.1);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(221, 219, 216, 0.2);
+        }
+      `}} />
     </div>
   )
 }
 
-export default VoiceChatbot 
+export default VoiceChatbot

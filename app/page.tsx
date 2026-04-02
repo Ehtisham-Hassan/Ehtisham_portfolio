@@ -59,25 +59,24 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-start text-left"
           >
-            <span className="text-sm font-semibold text-dev2c-textmuted mb-6 uppercase tracking-wider">
+            {/* <span className="text-sm font-semibold text-dev2c-textmuted mb-6 uppercase tracking-wider">
               Welcome to Dev2c
-            </span>
-            <h2>Disciplined</h2>
+            </span> */}
+            {/* <h2>Disciplined</h2> */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight text-dev2c-text leading-tight">
-              Freelancers.
+              Scale Your <span className="text-[#1B4332]">Real Estate</span> Empire with <span className="text-[#1B4332]">AI Precision</span>
             </h1>
-            <p>buikding AI Agents for your business</p>
+            <p></p>
 
             <p className="text-lg sm:text-xl text-dev2c-textmuted mb-10 max-w-2xl leading-relaxed">
-              We specialize in practical AI agents that deliver real-world results, measurable and undeniable.
-              Transform your business with intelligent automation powered by local AI agents and seamless workflow integration.
+              We build custom AI Agents that handle lead qualification, follow-ups, and scheduling so your team can focus on closing million-dollar deals.
             </p>
 
             <button
               onClick={handleBookCall}
               className="bg-dev2c-text text-white font-medium py-4 px-8 rounded-full hover:bg-dev2c-text/90 transition-colors duration-300 shadow-md"
             >
-              Book a Call
+              Get Your Custom AI Audit
             </button>
           </motion.div>
 
@@ -152,12 +151,11 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-dev2c-text">
-              Experience Our <span className="text-dev2c-textmuted">Voice AI Agent</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1B4332]">
+              Talk to the Future of Real Estate.
             </h2>
             <p className="text-xl text-dev2c-textmuted max-w-2xl mx-auto">
-              Powered by Ollama running locally on our server. Ask me about AI agents,
-              automation workflows, or our services!
+              Press the mic to see how our agents handle lead inquiries in real-time. No typing required.
             </p>
           </motion.div>
 
