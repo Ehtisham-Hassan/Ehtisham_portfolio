@@ -194,12 +194,11 @@ const VoiceChatbot = () => {
    
       {/* Container Design: Glassmorphism over subtle dark gradient */}
       {/* <div className="relative bg-gradient-to-br from-[#12181A] to-[#1A1F24] backdrop-blur-xl rounded-[2rem] border border-white/10 p-6 sm:p-10 shadow-2xl overflow-hidden"> */}
-         {/* Container Design */}
-      <div className="relative bg-[#12181A] backdrop-blur-xl rounded-[2rem] border border-[#DDDBD8]/10 p-6 sm:p-10 shadow-2xl overflow-hidden">
+      {/* Container Design */}
+      <div className="relative bg-[#12181A] backdrop-blur-xl rounded-[2rem] border border-[#DDDBD8]/10 p-5 sm:p-8 shadow-2xl overflow-hidden">
       
-
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 pb-6 border-b border-[#DDDBD8]/10">
+        <div className="flex items-center justify-between mb-4 pb-4 border-b border-[#DDDBD8]/10">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-[#183C2D] rounded-full flex items-center justify-center shadow-lg shadow-[#183C2D]/30">
               <Bot className="w-6 h-6 text-[#DDDBD8]" />
@@ -228,12 +227,35 @@ const VoiceChatbot = () => {
         </div>
 
         {/* Hero Area - The Voice Visualizer & Big Mic */}
-        <div className="flex flex-col items-center justify-center py-6 mb-6">
+        <div className="flex flex-col items-center justify-center py-2 mb-4 relative z-0">
+          
+          {/* Prestige Ring Animation */}
+          <AnimatePresence>
+            {isListening && (
+              <>
+                <motion.div
+                  className="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#183C2D]/30 border border-[#183C2D]/50 z-[-1]"
+                  initial={{ scale: 1, opacity: 0.8 }}
+                  animate={{ scale: 2, opacity: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
+                />
+                <motion.div
+                  className="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#183C2D]/20 z-[-1]"
+                  initial={{ scale: 1, opacity: 0.6 }}
+                  animate={{ scale: 1.6, opacity: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+                />
+              </>
+            )}
+          </AnimatePresence>
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={toggleListening}
-            className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl relative z-10 ${
+            className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl relative z-10 ${
               isListening
                 ? 'bg-red-500 text-[#E5E5E5] shadow-red-500/40'
                 : 'bg-[#183C2D] text-[#DDDBD8] shadow-[#183C2D]/40 hover:bg-[#123524]'
@@ -243,7 +265,7 @@ const VoiceChatbot = () => {
           </motion.button>
           
           {/* Visualizer Pulse when Listening */}
-          <div className="h-16 mt-6 flex items-center justify-center space-x-1.5 opacity-80">
+          <div className="h-10 mt-4 flex items-center justify-center space-x-1.5 opacity-80">
             {isListening ? (
               [1, 2, 3, 4, 5, 6, 7].map((i) => (
                 <motion.div
@@ -267,7 +289,7 @@ const VoiceChatbot = () => {
         </div>
 
         {/* Messages */}
-        <div className="h-80 overflow-y-auto mb-6 pr-2 space-y-6 custom-scrollbar">
+        <div className="h-48 overflow-y-auto mb-4 pr-2 space-y-4 custom-scrollbar">
           <AnimatePresence>
             {messages.map((message) => (
               <motion.div
@@ -286,8 +308,8 @@ const VoiceChatbot = () => {
                 >
                   <div className="flex items-start space-x-3">
                     {message.sender === 'bot' && (
-                      <div className="w-8 h-8 bg-[#DDDBD8]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
-                        <Bot className="w-4 h-4 text-[#DDDBD8]" />
+                      <div className="w-6 h-6 bg-[#DDDBD8]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                        <Bot className="w-3 h-3 text-[#DDDBD8]" />
                       </div>
                     )}
                     <div className="flex-1">
@@ -313,10 +335,10 @@ const VoiceChatbot = () => {
               animate={{ opacity: 1, y: 0 }}
               className="flex justify-start"
             >
-              <div className="bg-[#DDDBD8]/5 border border-[#DDDBD8]/5 px-5 py-4 rounded-3xl rounded-bl-sm">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[#DDDBD8]/10 rounded-full flex items-center justify-center">
-                    <Loader2 className="w-4 h-4 animate-spin text-[#DDDBD8]" />
+              <div className="bg-[#DDDBD8]/5 border border-[#DDDBD8]/5 px-4 py-3 rounded-3xl rounded-bl-sm">
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-[#DDDBD8]/10 rounded-full flex items-center justify-center">
+                    <Loader2 className="w-3 h-3 animate-spin text-[#DDDBD8]" />
                   </div>
                   <span className="text-sm font-light text-[#DDDBD8]/60">Concierge is typing...</span>
                 </div>
