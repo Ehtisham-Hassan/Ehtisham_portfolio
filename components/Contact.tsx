@@ -60,14 +60,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@dev2c.com',
-      link: 'mailto:contact@dev2c.com'
+      value: 'hello@dev2c.com',
+      link: 'mailto:hello@dev2c.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+92 323 815 9099',
+      link: 'tel:+923238159099'
     },
     {
       icon: MapPin,
@@ -267,7 +267,7 @@ const Contact = () => {
             </div>
 
             {/* Free Consultancy CTA */}
-            <div className="card bg-dev2c-text text-white">
+            {/* <div className="card bg-dev2c-text text-white">
               <div className="text-center">
                 <Calendar className="w-12 h-12 mx-auto mb-4 text-white" />
                 <h3 className="text-2xl font-bold mb-4">
@@ -284,7 +284,7 @@ const Contact = () => {
                   <span>Book Free Call</span>
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Response Time */}
             <div className="card text-center">
@@ -298,7 +298,7 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Footer */}
+        {/* Footer
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -311,7 +311,7 @@ const Contact = () => {
               © 2024 Dev2c. All rights reserved. | Built with Next.js, Tailwind CSS, and ❤️
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

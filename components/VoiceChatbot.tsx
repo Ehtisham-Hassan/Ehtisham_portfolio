@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Mic, MicOff, Send, Volume2, VolumeX, Bot, User, Loader2 } from 'lucide-react'
 import toast from 'react-hot-toast'
+import './MicPulse.css'
 
 interface Message {
   id: string
@@ -17,7 +18,7 @@ const VoiceChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hello! Welcome to Dev2c's portfolio website. We're a team of AI agent developers and automation experts. How can I help you today? Are you looking to learn more about custom AI agents, workflow automation, or voice interfaces?",
+      text: "Hi, I'm the Dev2C Concierge. I can show you how we automate lead captures and viewings. What would you like to see?",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -184,14 +185,26 @@ const VoiceChatbot = () => {
     }
   }
 
+  const WaveformIcon = () => (
+    <svg 
+      className="mic-icon" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  );
+
   return (
     <div className="max-w-4xl mx-auto relative group">
       
       {/* Decorative gradient blur behind the luxury container */}
       {/* <div className="absolute -inset-1 bg-gradient-to-r from-[#1B4332] to-[#B8860B] rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
        */}
-       <div className="absolute -inset-1 bg-[#183C2D] rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-   
+      <div className="absolute -inset-1 bg-[#183C2D] rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+
       {/* Container Design: Glassmorphism over subtle dark gradient */}
       {/* <div className="relative bg-gradient-to-br from-[#12181A] to-[#1A1F24] backdrop-blur-xl rounded-[2rem] border border-white/10 p-6 sm:p-10 shadow-2xl overflow-hidden"> */}
       {/* Container Design */}
@@ -214,8 +227,7 @@ const VoiceChatbot = () => {
           <div className="flex items-center space-x-2">
             <button
               onClick={toggleMute}
-              className={`p-3 rounded-xl transition-all duration-300 ${
-                isMuted 
+              className={`p-3 rounded-xl transition-all duration-300 ${isMuted
                   ? 'bg-red-500/20 text-red-400 border border-red-500/30' 
                   : 'bg-[#DDDBD8]/5 text-[#DDDBD8]/70 hover:bg-[#DDDBD8]/10 hover:text-[#E5E5E5] border border-[#DDDBD8]/5'
               }`}
@@ -226,66 +238,23 @@ const VoiceChatbot = () => {
           </div>
         </div>
 
-        {/* Hero Area - The Voice Visualizer & Big Mic */}
-        <div className="flex flex-col items-center justify-center py-2 mb-4 relative z-0">
-          
-          {/* Prestige Ring Animation */}
-          <AnimatePresence>
-            {isListening && (
-              <>
-                <motion.div
-                  className="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#183C2D]/30 border border-[#183C2D]/50 z-[-1]"
-                  initial={{ scale: 1, opacity: 0.8 }}
-                  animate={{ scale: 2, opacity: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
-                />
-                <motion.div
-                  className="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#183C2D]/20 z-[-1]"
-                  initial={{ scale: 1, opacity: 0.6 }}
-                  animate={{ scale: 1.6, opacity: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
-                />
-              </>
-            )}
-          </AnimatePresence>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        {/* Hero Area - The Custom CSS Mic Area */}
+        <div className="ai-mic-container w-full !p-6 !bg-transparent mb-2">
+          <button 
+            className="premium-mic-btn" 
             onClick={toggleListening}
-            className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl relative z-10 ${
-              isListening
-                ? 'bg-red-500 text-[#E5E5E5] shadow-red-500/40'
-                : 'bg-[#183C2D] text-[#DDDBD8] shadow-[#183C2D]/40 hover:bg-[#123524]'
-            }`}
+            aria-label={isListening ? "Stop listening" : "Start listening"}
           >
-            {isListening ? <MicOff className="w-8 h-8 sm:w-10 sm:h-10" /> : <Mic className="w-8 h-8 sm:w-10 sm:h-10" />}
-          </motion.button>
-          
-          {/* Visualizer Pulse when Listening */}
-          <div className="h-10 mt-4 flex items-center justify-center space-x-1.5 opacity-80">
-            {isListening ? (
-              [1, 2, 3, 4, 5, 6, 7].map((i) => (
-                <motion.div
-                  key={i}
-                  className="w-1.5 bg-[#DDDBD8]"
-                  animate={{ height: ["20%", "100%", "20%"] }}
-                  transition={{
-                    duration: 0.6 + (i * 0.1),
-                    repeat: Infinity,
-                    delay: i * 0.1,
-                    ease: "easeInOut"
-                  }}
-                />
-              ))
-             ) : (
-               <div className="text-[#DDDBD8]/40 font-light text-sm tracking-widest uppercase">
-                  Press Mic to Speak
-               </div>
-             )}
-          </div>
+            {/* Only show the pulse when it is waiting for the user to speak */}
+            {!isListening && <div className="mic-pulse-ring"></div>}
+            
+            {/* Swap the icon based on the state */}
+            {isListening ? <WaveformIcon /> : <Mic className="mic-icon" />}
+          </button>
+
+          <p className="mic-instruction-text">
+            {isListening ? 'LISTENING TO YOUR REQUEST...' : 'PRESS MIC TO SPEAK'}
+          </p>
         </div>
 
         {/* Messages */}
@@ -300,8 +269,7 @@ const VoiceChatbot = () => {
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[85%] lg:max-w-[75%] px-5 py-4 rounded-3xl shadow-sm ${
-                    message.sender === 'user'
+                  className={`max-w-[85%] lg:max-w-[75%] px-5 py-4 rounded-3xl shadow-sm ${message.sender === 'user'
                       ? 'bg-[#183C2D] text-[#E5E5E5] rounded-br-sm'
                       : 'bg-[#DDDBD8]/5 backdrop-blur-md border border-[#DDDBD8]/10 text-[#E5E5E5] rounded-bl-sm'
                   }`}
@@ -385,8 +353,7 @@ const VoiceChatbot = () => {
             whileTap={{ scale: 0.95 }}
             onClick={() => handleSendMessage(inputText)}
             disabled={!inputText.trim() || isLoading}
-            className={`p-4 rounded-xl transition-all duration-300 ${
-              inputText.trim() && !isLoading
+            className={`p-4 rounded-xl transition-all duration-300 ${inputText.trim() && !isLoading
                 ? 'bg-[#183C2D] text-[#DDDBD8] shadow-lg hover:bg-[#123524]'
                 : 'bg-[#DDDBD8]/5 text-[#DDDBD8]/30 cursor-not-allowed'
             }`}
@@ -399,7 +366,8 @@ const VoiceChatbot = () => {
       </div>
       
       {/* Hidden scrollbar styles */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
         }
