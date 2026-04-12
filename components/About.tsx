@@ -55,11 +55,11 @@ const About = () => {
               className="card overflow-hidden group"
             >
               <div className="h-64 sm:h-80 w-full relative mb-6 rounded-xl overflow-hidden bg-gray-200">
-                <Image 
-                    src={member.image} 
-                    alt={member.name} 
-                    fill 
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <h3 className="text-2xl font-bold mb-1 text-dev2c-text">

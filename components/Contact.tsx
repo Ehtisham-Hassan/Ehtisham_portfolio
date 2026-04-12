@@ -31,13 +31,13 @@ const Contact = () => {
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000))
-      
+
       // In a real implementation, you would send this to your backend
       console.log('Form submitted:', formData)
-      
+
       setIsSubmitted(true)
       toast.success('Message sent successfully! I\'ll get back to you soon.')
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -91,7 +91,7 @@ const Contact = () => {
             Let's <span className="text-dev2c-textmuted">Connect</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to transform your business with AI agents and automation? 
+            Ready to transform your business with AI agents and automation?
             Let's discuss your project and explore how we can work together.
           </p>
         </motion.div>
@@ -108,7 +108,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-6 text-white">
                 Send Us a Message
               </h3>
-              
+
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -197,9 +197,8 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full btn-primary flex items-center justify-center space-x-2 ${
-                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-                    }`}
+                    className={`w-full btn-primary flex items-center justify-center space-x-2 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
                   >
                     {isSubmitting ? (
                       <>

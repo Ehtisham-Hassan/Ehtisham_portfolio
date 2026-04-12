@@ -109,11 +109,11 @@ const Services = () => {
                     {service.title}
                   </h3>
                 </div>
-                
+
                 <p className="text-dev2c-textmuted mb-8 leading-relaxed font-light text-base">
                   {service.description}
                 </p>
-                
+
                 <div className="space-y-3">
                   <h4 className="text-xs uppercase tracking-widest font-semibold text-dev2c-text mb-4 opacity-80">Key Features</h4>
                   {service.features.map((feature) => (
