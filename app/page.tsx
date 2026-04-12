@@ -64,7 +64,7 @@ export default function Home() {
             </span> */}
             {/* <h2>Disciplined</h2> */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-14 tracking-tight text-dev2c-text leading-[1.1]">
-              Scale Your <span className="text-[#1B4332]">Real Estate</span> Empire with <span className="text-[#1B4332]">AI Precision</span>
+              Scale Your <span className="text-[#1B4332] hover:text-green-700 transition">Real Estate</span> Empire with <span className="text-[#1B4332] hover:text-green-700 transition">AI Precision</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-dev2c-textmuted mb-16 max-w-2xl leading-relaxed">
@@ -150,7 +150,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#1B4332]">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#1B4332] hover:text-green-700 transition">
               Talk to the Future of Real Estate.
             </h2>
             <p className="text-xl text-dev2c-textmuted max-w-2xl mx-auto">

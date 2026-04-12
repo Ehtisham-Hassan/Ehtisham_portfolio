@@ -61,7 +61,7 @@ const Navbar = () => {
                 <source src="/video/landing.mp4" type="video/mp4" />
               </video> */}
             {/* <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase">Dev2c</span> */}
-            <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase">
+            <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase hover:text-green-700 transition">
               Dev<span className="text-[#183C2D] hover:text-green-700 transition">2</span>c
             </span>          
             </motion.div>
