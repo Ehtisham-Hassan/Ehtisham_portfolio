@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { CONTACT } from '@/utils/links'
 import {
   Mic,
   MicOff,
@@ -40,8 +41,7 @@ export default function Home() {
   }
 
   const handleBookCall = () => {
-    // In a real implementation, this would open Calendly or similar
-    toast.success('Booking system coming soon!')
+    window.open(CONTACT.calendly, '_blank')
   }
 
   return (
@@ -91,13 +91,13 @@ export default function Home() {
             <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group">
               <Image src="/images/ehtisham.png" alt="Ehtisham" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
-                <a href="mailto:ehtisham@dev2c.com" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
+                <a href={`mailto:${CONTACT.ehtisham.email}`} className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
                   <Mail className="w-6 h-6" />
                 </a>
-                <a href="https://linkedin.com/in/ehtisham" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="LinkedIn">
+                <a href={CONTACT.ehtisham.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="LinkedIn">
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="https://github.com/ehtisham" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="GitHub">
+                <a href={CONTACT.ehtisham.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="GitHub">
                   <Github className="w-6 h-6" />
                 </a>
               </div>
@@ -107,13 +107,13 @@ export default function Home() {
             <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group">
               <Image src="/images/tahir.png" alt="Tahir" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
-                <a href="mailto:tahir@dev2c.com" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
+                <a href={`mailto:${CONTACT.tahir.email}`} className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
                   <Mail className="w-6 h-6" />
                 </a>
-                <a href="https://linkedin.com/in/tahir" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="LinkedIn">
+                <a href={CONTACT.tahir.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="LinkedIn">
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="https://github.com/tahir" target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="GitHub">
+                <a href={CONTACT.tahir.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="GitHub">
                   <Github className="w-6 h-6" />
                 </a>
               </div>

@@ -1,29 +1,48 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Bot, Zap, Code, Database, Workflow, MessageSquare, Cpu, Globe } from 'lucide-react'
+import { Bot, Zap, Code, Database, Workflow, MessageSquare, Cpu, Globe, Home } from 'lucide-react'
+import { CONTACT } from '@/utils/links'
 
 const Services = () => {
   const services = [
     {
       icon: Bot,
-      title: 'Custom AI Agents',
-      description: 'Intelligent chatbots and virtual assistants powered by local LLMs like Ollama. Perfect for customer support, data analysis, and task automation.',
-      features: ['GPT-based agents', 'Workflow agents', 'Voice-enabled chatbots', 'Multi-modal AI'],
+      title: 'Speed-to-Lead AI Agents',
+      description: 'Omnichannel conversational agents that instantly engage and qualify inbound leads 24/7, booking high-intent buyers directly onto your calendar.',
+      features: [
+        'Instant Zillow & Web lead response',
+        'Automated budget qualification',
+        'Direct calendar scheduling',
+        'Omnichannel (SMS, Web, WhatsApp)',
+        'Seamless CRM integration'
+      ],
       color: 'bg-dev2c-text'
     },
     {
       icon: Zap,
-      title: 'Workflow Automation',
-      description: 'End-to-end automation solutions using n8n to streamline your business processes and eliminate repetitive tasks.',
-      features: ['Slack bots', 'CRM automation', 'Notion integration', 'Email workflows'],
+      title: 'Intelligent Data Extraction',
+      description: 'Automated backend agents that ingest messy contracts, lease agreements, and disclosures, extracting critical terms and mapping them directly into your database.',
+      features: [
+        'PDF & unstructured text parsing',
+        'Contract term extraction (dates, escrow)',
+        'ERP / CRM auto-population',
+        'FastAPI backend architecture',
+        'Zero manual data entry'
+      ],
       color: 'bg-dev2c-text'
     },
     {
-      icon: Code,
-      title: 'API Solutions',
-      description: 'Custom API development and integration services using modern frameworks like FastAPI and LangChain.',
-      features: ['LangChain integration', 'Pinecone vector DBs', 'Custom APIs', 'Third-party integrations'],
+      icon: Home,
+      title: 'Autonomous Property Matchmaker',
+      description: 'Proactive agents that continuously monitor live MLS feeds, curate exact matches based on buyer criteria, and autonomously coordinate showing schedules.',
+      features: [
+        'Live MLS feed monitoring',
+        'Hyper-personalized property curation',
+        'Automated showing requests',
+        'Client preference learning',
+        'End-to-end scheduling workflows'
+      ],
       color: 'bg-dev2c-text'
     }
   ]
@@ -62,8 +81,8 @@ const Services = () => {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-dev2c-text">
             Our <span className="text-dev2c-textmuted">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Direct access to the founders. No account managers, just world-class engineering
+          <p className="text-lg sm:text-xl text-dev2c-textmuted max-w-3xl mx-auto font-light tracking-wide">
+            Direct access to the founders. No account managers, just world-class engineering tailored for Real Estate.
           </p>
         </motion.div>
 
@@ -80,26 +99,27 @@ const Services = () => {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="card h-full hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center mb-6">
-                  <div className={`w-12 h-12 rounded-lg ${service.color} flex items-center justify-center mr-4`}>
-                    <service.icon className="w-6 h-6 text-white" />
+              {/* Prestige Glass Card */}
+              <div className="card h-full overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-dev2c-text/20 transition-all duration-500 relative z-10 group-hover:bg-white/40">
+                <div className="flex items-center mb-8">
+                  <div className={`w-14 h-14 rounded-xl ${service.color} flex items-center justify-center mr-5 shadow-lg shadow-black/10 group-hover:scale-110 transition-transform duration-500`}>
+                    <service.icon className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-2xl font-semibold text-dev2c-text tracking-tight">
                     {service.title}
                   </h3>
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-dev2c-textmuted mb-8 leading-relaxed font-light text-base">
                   {service.description}
                 </p>
                 
-                <div className="space-y-2">
-                  <h4 className="font-medium text-gray-900 dark:text-white mb-3">Key Features:</h4>
+                <div className="space-y-3">
+                  <h4 className="text-xs uppercase tracking-widest font-semibold text-dev2c-text mb-4 opacity-80">Key Features</h4>
                   {service.features.map((feature) => (
-                    <div key={feature} className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 bg-primary-600 rounded-full"></div>
-                      <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                    <div key={feature} className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-dev2c-text/60 group-hover:bg-dev2c-text transition-colors duration-300"></div>
+                      <span className="text-sm text-dev2c-textmuted font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -117,10 +137,10 @@ const Services = () => {
           className="mt-20"
         >
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold mb-4 text-dev2c-text">
-              Technologies We <span className="text-dev2c-textmuted">Master</span>
+            <h3 className="text-3xl font-bold mb-4 text-dev2c-text tracking-tight">
+              Technologies We <span className="text-dev2c-textmuted font-light">Master</span>
             </h3>
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-dev2c-textmuted font-light tracking-wide">
               Built with cutting-edge tools and frameworks for maximum performance and reliability
             </p>
           </div>
@@ -139,10 +159,10 @@ const Services = () => {
               <motion.div
                 key={tech.name}
                 whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+                className="glass-effect flex flex-col items-center justify-center p-5 hover:bg-white/40 hover:border-dev2c-text/20 transition-all duration-300 group"
               >
-                <tech.icon className="w-8 h-8 text-dev2c-text mb-2" />
-                <span className="text-xs font-medium text-dev2c-textmuted text-center">
+                <tech.icon className="w-7 h-7 text-dev2c-textmuted group-hover:text-dev2c-text mb-3 transition-colors duration-300" strokeWidth={1.5} />
+                <span className="text-xs font-semibold text-dev2c-text tracking-widest uppercase text-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                   {tech.name}
                 </span>
               </motion.div>
@@ -165,9 +185,14 @@ const Services = () => {
             <p className="text-lg mb-6 opacity-90">
               Let's discuss how AI agents and automation can streamline your operations and boost productivity.
             </p>
-            <button className="bg-white text-dev2c-textmuted font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-md">
+            <a
+              href={CONTACT.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-dev2c-textmuted font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-md"
+            >
               Book Free Consultancy Call
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

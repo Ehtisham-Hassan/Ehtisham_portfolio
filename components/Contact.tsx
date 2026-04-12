@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Calendar, Send, CheckCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { CONTACT } from '@/utils/links'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,16 +53,15 @@ const Contact = () => {
   }
 
   const handleBookCall = () => {
-    // In a real implementation, this would open Calendly or similar
-    toast.success('Booking system coming soon! You can also email me directly.')
+    window.open(CONTACT.calendly, '_blank')
   }
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@dev2c.com',
-      link: 'mailto:hello@dev2c.com'
+      value: CONTACT.ehtisham.email,
+      link: `mailto:${CONTACT.ehtisham.email}`
     },
     {
       icon: Phone,
@@ -267,24 +267,26 @@ const Contact = () => {
             </div>
 
             {/* Free Consultancy CTA */}
-            {/* <div className="card bg-dev2c-text text-white">
+            <div className="card bg-dev2c-text text-white">
               <div className="text-center">
                 <Calendar className="w-12 h-12 mx-auto mb-4 text-white" />
                 <h3 className="text-2xl font-bold mb-4">
                   Free Consultancy Call
                 </h3>
                 <p className="text-lg mb-6 opacity-90">
-                  Let's discuss your project requirements and explore how AI agents and automation can benefit your business.
+                  Let&apos;s discuss your project requirements and explore how AI agents and automation can benefit your business.
                 </p>
-                <button
-                  onClick={handleBookCall}
-                  className="bg-white text-dev2c-text font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center space-x-2 mx-auto"
+                <a
+                  href={CONTACT.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-dev2c-text font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 inline-flex items-center space-x-2 mx-auto"
                 >
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Call</span>
-                </button>
+                </a>
               </div>
-            </div> */}
+            </div>
 
             {/* Response Time */}
             <div className="card text-center">
@@ -298,7 +300,7 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Footer
+        {/* Footer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -306,12 +308,12 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
-            <p className="text-gray-600 dark:text-gray-300">
-              © 2024 Dev2c. All rights reserved. | Built with Next.js, Tailwind CSS, and ❤️
+          <div className="border-t border-gray-700 pt-8">
+            <p className="text-gray-400">
+              © {new Date().getFullYear()} Dev2c. All rights reserved.
             </p>
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
     </section>
   )

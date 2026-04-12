@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Bot } from 'lucide-react'
+import { CONTACT } from '@/utils/links'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -70,12 +71,14 @@ const Navbar = () => {
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
             {/* CTA Button */}
-            <button
-              onClick={() => scrollToSection('contact')}
+            <a
+              href={CONTACT.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:block bg-dev2c-text text-white hover:bg-dev2c-text/80 font-medium py-2 px-6 rounded-full text-sm transition-all duration-300"
             >
               Book a Call
-            </button>
+            </a>
 
             {/* Mobile menu button */}
             <button
@@ -105,12 +108,14 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
-              <button
-                onClick={() => scrollToSection('contact')}
+              <a
+                href={CONTACT.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center py-2 bg-dev2c-text text-white hover:bg-dev2c-text/80 rounded-lg transition-colors mt-4"
               >
                 Book a Call
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
