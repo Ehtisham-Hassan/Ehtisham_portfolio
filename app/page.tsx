@@ -87,7 +87,7 @@ export default function Home() {
             className="grid grid-cols-2 gap-8 lg:gap-12 h-full"
           >
             {/* Top Left (Ehtisham) */}
-            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group">
+            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group hover:scale-[1.2] transition-transform duration-1000 ease-in-out">
               <Image src="/images/ehtisham.png" alt="Ehtisham" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
                 <a href={`mailto:${CONTACT.ehtisham.email}`} className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
@@ -103,7 +103,7 @@ export default function Home() {
             </div>
 
             {/* Top Right (Tahir) */}
-            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group">
+            <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group hover:scale-[1.2] transition-transform duration-1000 ease-in-out">
               <Image src="/images/tahir.png" alt="Tahir" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
                 <a href={`mailto:${CONTACT.tahir.email}`} className="p-3 bg-dev2c-text/5 hover:bg-dev2c-text/10 text-dev2c-text rounded-xl transition-colors duration-200" title="Email">
@@ -119,13 +119,13 @@ export default function Home() {
             </div>
 
             {/* Bottom Row */}
-            <div className="col-span-2 aspect-[3/1] rounded-lg overflow-hidden relative shadow-lg bg-dev2c-text border border-dev2c-text/10">
+            <div className="col-span-2 aspect-[3/1] rounded-lg overflow-hidden relative shadow-lg bg-dev2c-text hover:scale-[1.2] transition-transform duration-1000 ease-in-out">
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-"
+                className=" inset-0 w-full h-full object-cover hover:scale-[1.2] transition-transform duration-1000 ease-in-out"
               >
                 <source src="/video/landing.mp4" type="video/mp4" />
               </video>

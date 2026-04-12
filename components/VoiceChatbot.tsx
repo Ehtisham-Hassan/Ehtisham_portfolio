@@ -198,7 +198,7 @@ const VoiceChatbot = () => {
   );
 
   return (
-    <div className="max-w-4xl mx-auto relative group">
+    <div className="max-w-4xl mx-auto relative group hover:scale-[1.2] transition-transform duration-1000 ease-in-out">
       
       {/* Decorative gradient blur behind the luxury container */}
       {/* <div className="absolute -inset-1 bg-gradient-to-r from-[#1B4332] to-[#B8860B] rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>

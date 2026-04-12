@@ -100,9 +100,9 @@ const Services = () => {
               className="group relative"
             >
               {/* Prestige Glass Card */}
-              <div className="card h-full overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-dev2c-text/20 transition-all duration-500 relative z-10 group-hover:bg-white/40">
+              <div className="card h-full overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-dev2c-text/20 transition-all duration-1000 relative z-10 group-hover:bg-white/40 hover:scale-[1.2] transition-transform duration-1000 ease-in-out">
                 <div className="flex items-center mb-8">
-                  <div className={`w-14 h-14 rounded-xl ${service.color} flex items-center justify-center mr-5 shadow-lg shadow-black/10 group-hover:scale-110 transition-transform duration-500`}>
+                  <div className={`w-14 h-14 rounded-xl ${service.color} flex items-center justify-center mr-5 shadow-lg shadow-black/10 group-hover:scale-110 transition-transform duration-1000 ease-in-out`}>
                     <service.icon className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-2xl font-semibold text-dev2c-text tracking-tight">
