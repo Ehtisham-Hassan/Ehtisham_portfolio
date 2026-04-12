@@ -78,7 +78,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-dev2c-footer text-white">
+    <section id="contact" className="py-32 px-4 sm:px-6 lg:px-12 bg-dev2c-footer text-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-white">
             Let's <span className="text-dev2c-textmuted">Connect</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -96,7 +96,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left Column - Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -223,11 +223,11 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-12"
           >
             {/* Contact Information */}
             <div className="card">
-              <h3 className="text-2xl font-bold mb-6 text-white">
+              <h3 className="text-2xl font-bold mb-10 text-white">
                 Get in Touch
               </h3>
               <div className="space-y-4">
@@ -305,7 +305,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-32 text-center"
         >
           <div className="border-t border-gray-700 pt-8">
             <p className="text-gray-400">

@@ -49,8 +49,8 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-dev2c-bg">
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 px-8 sm:px-12 lg:px-16 bg-dev2c-bg">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
 
           {/* Left Column (Text) */}
           <motion.div
@@ -63,12 +63,11 @@ export default function Home() {
               Welcome to Dev2c
             </span> */}
             {/* <h2>Disciplined</h2> */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 tracking-tight text-dev2c-text leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-14 tracking-tight text-dev2c-text leading-[1.1]">
               Scale Your <span className="text-[#1B4332]">Real Estate</span> Empire with <span className="text-[#1B4332]">AI Precision</span>
             </h1>
-            <p></p>
 
-            <p className="text-lg sm:text-xl text-dev2c-textmuted mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-dev2c-textmuted mb-16 max-w-2xl leading-relaxed">
               We build custom AI Agents that handle lead qualification, follow-ups, and scheduling so your team can focus on closing million-dollar deals.
             </p>
 
@@ -85,7 +84,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4 h-full"
+            className="grid grid-cols-2 gap-8 lg:gap-12 h-full"
           >
             {/* Top Left (Ehtisham) */}
             <div className="col-span-1 aspect-square md:aspect-[4/5] bg-dev2c-header rounded-lg overflow-hidden relative shadow-lg border border-dev2c-text/10 group">
@@ -142,16 +141,16 @@ export default function Home() {
       </section>
 
       {/* Voice Chatbot Section */}
-      <section id="voice-chatbot" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+      <section id="voice-chatbot" className="py-32 lg:py-40 px-8 sm:px-12 lg:px-16 bg-transparent">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#1B4332]">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#1B4332]">
               Talk to the Future of Real Estate.
             </h2>
             <p className="text-xl text-dev2c-textmuted max-w-2xl mx-auto">

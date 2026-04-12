@@ -27,14 +27,14 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+    <section id="about" className="py-32 lg:py-40 px-8 lg:px-16 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-dev2c-text">
             Meet Our <span className="text-dev2c-textmuted">Freelancers</span>
@@ -44,7 +44,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
           {team.map((member, index) => (
             <motion.div
               key={member.name}

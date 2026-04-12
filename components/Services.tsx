@@ -69,7 +69,7 @@ const Services = () => {
   }
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+    <section id="services" className="py-32 lg:py-40 px-8 lg:px-16 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16"
         >
           {services.map((service, index) => (
             <motion.div
@@ -145,7 +145,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-10">
             {[
               { name: 'Ollama', icon: Cpu },
               { name: 'n8n', icon: Workflow },
