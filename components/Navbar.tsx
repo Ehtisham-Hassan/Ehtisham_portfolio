@@ -37,11 +37,10 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-dev2c-header shadow-lg border-b border-dev2c-header/20' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'bg-dev2c-header shadow-lg border-b border-dev2c-header/20'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -51,9 +50,21 @@ const Navbar = () => {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
-            <Bot className="w-8 h-8 text-dev2c-text" />
-            <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase">Dev2c</span>
-          </motion.div>
+            {/* <Bot className="w-8 h-8 text-dev2c-text" /> */}
+            {/* <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-8 w-auto object-contain"
+              >
+                <source src="/video/landing.mp4" type="video/mp4" />
+              </video> */}
+            {/* <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase">Dev2c</span> */}
+            <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase">
+              Dev<span className="text-[#183C2D] hover:text-green-700 transition">2</span>c
+            </span>          
+            </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

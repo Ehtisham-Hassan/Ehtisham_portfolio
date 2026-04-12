@@ -125,7 +125,7 @@ export default function Home() {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-80"
+                className="absolute inset-0 w-full h-full object-cover opacity-"
               >
                 <source src="/video/landing.mp4" type="video/mp4" />
               </video>
