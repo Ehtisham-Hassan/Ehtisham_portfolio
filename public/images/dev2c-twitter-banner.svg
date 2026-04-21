@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500" fill="none">
+  <rect width="1500" height="500" fill="#101617"></rect>
+  <defs>
+    <pattern id="tw-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#163628" stroke-width="0.4" opacity="0.5"></path>
+    </pattern>
+    <radialGradient id="tw-glow" cx="25%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#163628" stop-opacity="0.55"></stop>
+      <stop offset="100%" stop-color="#101617" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="1500" height="500" fill="url(#tw-grid)"></rect>
+  <rect width="1500" height="500" fill="url(#tw-glow)"></rect>
+  <path d="M 100,70 L 100,430 L 190,430 Q 340,430 340,250 Q 340,70 190,70 Z" stroke="#cecece" stroke-width="13" fill="none" stroke-linejoin="round"></path>
+  <path d="M 340,294 Q 378,294 378,330 Q 378,374 336,374 Q 302,374 302,340 Q 302,306 336,308" stroke="#3a9e6a" stroke-width="11" fill="none" stroke-linecap="round"></path>
+  <polygon points="336,272 314,306 358,306" fill="#3a9e6a"></polygon>
+  <circle cx="340" cy="294" r="13" fill="#3a9e6a"></circle>
+  <text x="410" y="290" font-family="Inter Tight,sans-serif" font-weight="700" font-size="140" letter-spacing="-6" fill="#cecece">dev</text><text x="704" y="290" font-family="Inter Tight,sans-serif" font-weight="700" font-size="140" letter-spacing="-6" fill="#3a9e6a">2</text><text x="772" y="290" font-family="Inter Tight,sans-serif" font-weight="700" font-size="140" letter-spacing="-6" fill="#cecece">c</text><text x="410" y="370" font-family="JetBrains Mono,monospace" font-size="22" letter-spacing="4.5" fill="#3a6a4a">AI AGENTS · AUTOMATION · REAL ESTATE</text><text x="1460" y="470" font-family="JetBrains Mono,monospace" font-size="16" fill="#2a4a38" text-anchor="end">dev2c.com</text>
+</svg>

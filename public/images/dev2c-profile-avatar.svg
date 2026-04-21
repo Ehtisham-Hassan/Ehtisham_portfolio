@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#101617"></rect>
+  <defs>
+    <radialGradient id="pglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#163628" stop-opacity="0.5"></stop>
+      <stop offset="100%" stop-color="#101617" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#pglow)"></rect>
+  <path d="M 100,60 L 100,340 L 170,340 Q 310,340 310,200 Q 310,60 170,60 Z" stroke="#cecece" stroke-width="18" fill="none" stroke-linejoin="round"></path>
+  <path d="M 310,240 Q 350,240 350,278 Q 350,325 302,325 Q 264,325 264,287 Q 264,250 302,252" stroke="#3a9e6a" stroke-width="16" fill="none" stroke-linecap="round"></path>
+  <polygon points="302,218 278,252 326,252" fill="#3a9e6a"></polygon>
+  <circle cx="310" cy="240" r="16" fill="#3a9e6a"></circle>
+</svg>

@@ -59,10 +59,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-start text-left"
           >
-            {/* <span className="text-sm font-semibold text-dev2c-textmuted mb-6 uppercase tracking-wider">
-              Welcome to Dev2c
-            </span> */}
-            {/* <h2>Disciplined</h2> */}
+
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-14 tracking-tight text-dev2c-text leading-[1.1]">
               Scale Your <span className="text-[#1B4332] hover:text-green-700 transition">Real Estate</span> Empire with <span className="text-[#1B4332] hover:text-green-700 transition">AI Precision</span>
             </h1>

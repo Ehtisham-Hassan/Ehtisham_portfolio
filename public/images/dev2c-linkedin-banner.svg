@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" fill="none">
+  <rect width="1584" height="396" fill="#101617"></rect>
+  
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#163628" stroke-width="0.5" opacity="0.5"></path>
+    </pattern>
+    <radialGradient id="glow" cx="30%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#163628" stop-opacity="0.6"></stop>
+      <stop offset="100%" stop-color="#101617" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="1584" height="396" fill="url(#grid)"></rect>
+  <rect width="1584" height="396" fill="url(#glow)"></rect>
+  
+  <path d="M 120,60 L 120,336 L 220,336 Q 380,336 380,198 Q 380,60 220,60 Z" stroke="#cecece" stroke-width="14" fill="none" stroke-linejoin="round"></path>
+  <path d="M 380,230 Q 420,230 420,268 Q 420,316 374,316 Q 336,316 336,278 Q 336,242 374,242" stroke="#3a9e6a" stroke-width="12" fill="none" stroke-linecap="round"></path>
+  <polygon points="374,210 350,242 398,242" fill="#3a9e6a"></polygon>
+  <circle cx="380" cy="230" r="14" fill="#3a9e6a"></circle>
+  
+  <text x="460" y="230" font-family="Inter Tight,sans-serif" font-weight="700" font-size="120" letter-spacing="-5" fill="#cecece">dev</text><text x="738" y="230" font-family="Inter Tight,sans-serif" font-weight="700" font-size="120" letter-spacing="-5" fill="#3a9e6a">2</text><text x="800" y="230" font-family="Inter Tight,sans-serif" font-weight="700" font-size="120" letter-spacing="-5" fill="#cecece">c</text><text x="460" y="290" font-family="JetBrains Mono,monospace" font-size="22" letter-spacing="5" fill="#3a6a4a">DEVELOPER TO CLIENT · AI AGENTS · AUTOMATION · REAL ESTATE</text>
+  
+  <line x1="1100" y1="80" x2="1100" y2="316" stroke="#1e3028" stroke-width="1"></line>
+  <text x="1124" y="160" font-family="Inter Tight,sans-serif" font-weight="300" font-size="28" fill="#3a6a4a">AI Agents</text><text x="1124" y="208" font-family="Inter Tight,sans-serif" font-weight="300" font-size="28" fill="#3a6a4a">Automations</text><text x="1124" y="256" font-family="Inter Tight,sans-serif" font-weight="300" font-size="28" fill="#3a6a4a">Real Estate USA</text><text x="1124" y="304" font-family="Inter Tight,sans-serif" font-weight="300" font-size="28" fill="#3a6a4a">Web · SaaS · iOS</text><text x="1450" y="376" font-family="JetBrains Mono,monospace" font-size="16" fill="#2a4a38">dev2c.com</text>
+</svg>

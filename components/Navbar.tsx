@@ -50,21 +50,12 @@ const Navbar = () => {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
-            {/* <Bot className="w-8 h-8 text-dev2c-text" /> */}
-            {/* <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="h-8 w-auto object-contain"
-              >
-                <source src="/video/landing.mp4" type="video/mp4" />
-              </video> */}
-            {/* <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase">Dev2c</span> */}
-            <span className="text-xl font-bold text-dev2c-text tracking-widest uppercase hover:text-green-700 transition">
-              Dev<span className="text-[#183C2D] hover:text-green-700 transition">2</span>c
-            </span>          
-            </motion.div>
+            <img 
+               src="/images/dev2c-apple-touch-icon.svg" 
+               alt="Dev2c" 
+               className="h-8 w-auto hover:opacity-80 transition-opacity" 
+            />
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

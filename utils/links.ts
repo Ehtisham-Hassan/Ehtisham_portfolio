@@ -11,5 +11,5 @@ export const CONTACT = {
     github: 'https://github.com/Java-Mercy/',
     email: 'tahir@dev2c.com',
   },
-  calendly: 'https://calendly.com/ehtisham2285/30min',
+  calendly: 'https://calendly.com/tahir-dev2c/30min',
 } as const;

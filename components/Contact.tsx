@@ -308,6 +308,13 @@ const Contact = () => {
           className="mt-32 text-center"
         >
           <div className="border-t border-gray-700 pt-8">
+            <div className="flex justify-center mb-6">
+              <img 
+                 src="/images/dev2c-mark.svg" 
+                 alt="Dev2c" 
+                 className="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity" 
+              />
+            </div>
             <p className="text-gray-400">
               © {new Date().getFullYear()} Dev2c. All rights reserved.
             </p>

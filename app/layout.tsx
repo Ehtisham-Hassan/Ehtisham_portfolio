@@ -12,16 +12,29 @@ export const metadata: Metadata = {
   // description:`Build AI That Powers Your Business`,
   keywords: 'AI Agent, Automation, Ollama, n8n, Voice AI, Chatbot, Developer, Portfolio',
   authors: [{ name: 'Dev2C' }],
+  icons: {
+    icon: '/images/dev2c-favicon.svg',
+    apple: '/images/dev2c-apple-touch-icon.svg',
+  },
   openGraph: {
     title: 'Dev2C - AI Agent Developer & Automation',
     description: 'We Build Custom AI Agents & Automation Workflows That Work',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/images/dev2c-og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Dev2c',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dev2C - AI Agent Developer & Automation',
     description: 'We Build Custom AI Agents & Automation Workflows That Work',
+    images: ['/images/dev2c-og-image.svg'],
   },
 }
 

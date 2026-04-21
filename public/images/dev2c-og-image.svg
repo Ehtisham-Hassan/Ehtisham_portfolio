@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#101617"></rect>
+  <defs>
+    <pattern id="og-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#163628" stroke-width="0.4" opacity="0.6"></path>
+    </pattern>
+    <radialGradient id="og-glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#163628" stop-opacity="0.5"></stop>
+      <stop offset="100%" stop-color="#101617" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og-grid)"></rect>
+  <rect width="1200" height="630" fill="url(#og-glow)"></rect>
+  
+  <path d="M 100,130 L 100,500 L 200,500 Q 390,500 390,315 Q 390,130 200,130 Z" stroke="#cecece" stroke-width="16" fill="none" stroke-linejoin="round"></path>
+  <path d="M 390,370 Q 440,370 440,420 Q 440,476 382,476 Q 336,476 336,428 Q 336,382 382,384" stroke="#3a9e6a" stroke-width="14" fill="none" stroke-linecap="round"></path>
+  <polygon points="382,348 356,384 408,384" fill="#3a9e6a"></polygon>
+  <circle cx="390" cy="370" r="18" fill="#3a9e6a"></circle>
+  
+  <text x="490" y="330" font-family="Inter Tight,sans-serif" font-weight="800" font-size="130" letter-spacing="-5" fill="#cecece">dev</text><text x="790" y="330" font-family="Inter Tight,sans-serif" font-weight="800" font-size="130" letter-spacing="-5" fill="#3a9e6a">2</text><text x="860" y="330" font-family="Inter Tight,sans-serif" font-weight="800" font-size="130" letter-spacing="-5" fill="#cecece">c</text><text x="490" y="400" font-family="JetBrains Mono,monospace" font-size="20" letter-spacing="4" fill="#3a6a4a">AI AGENTS · AUTOMATION · REAL ESTATE · USA</text>
+  <line x1="100" y1="530" x2="1100" y2="530" stroke="#1e3028" stroke-width="1"></line>
+  <text x="100" y="565" font-family="JetBrains Mono,monospace" font-size="16" fill="#2a4a38">dev2c.com</text><text x="1100" y="565" font-family="JetBrains Mono,monospace" font-size="16" fill="#2a4a38" text-anchor="end">Developer to Client</text>
+</svg>
