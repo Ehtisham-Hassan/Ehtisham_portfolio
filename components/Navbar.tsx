@@ -4,10 +4,13 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Bot } from 'lucide-react'
 import { CONTACT } from '@/utils/links'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,10 @@ const Navbar = () => {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
+    if (pathname !== '/') {
+      window.location.href = `/#${sectionId}`
+      return
+    }
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -72,6 +79,13 @@ const Navbar = () => {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
+            <Link
+              href="/demo-video"
+              className="hidden sm:block text-dev2c-text hover:text-[#1B4332] font-medium transition-colors border border-dev2c-text px-4 py-2 rounded-full text-sm hover:bg-dev2c-text/5"
+            >
+              Demo Video
+            </Link>
+            
             {/* CTA Button */}
             <a
               href={CONTACT.calendly}
@@ -110,6 +124,13 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              <Link
+                href="/demo-video"
+                className="block w-full text-left px-3 py-2 text-dev2c-text hover:bg-dev2c-header rounded-md transition-colors duration-200 mt-2 border border-dev2c-text/20"
+                onClick={() => setIsOpen(false)}
+              >
+                Demo Video
+              </Link>
               <a
                 href={CONTACT.calendly}
                 target="_blank"

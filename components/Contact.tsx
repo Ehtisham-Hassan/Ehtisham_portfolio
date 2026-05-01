@@ -60,14 +60,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: CONTACT.ehtisham.email,
-      link: `mailto:${CONTACT.ehtisham.email}`
+      value: CONTACT.tahir.email,
+      link: `mailto:${CONTACT.tahir.email}`
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+92 323 815 9099',
-      link: 'tel:+923238159099'
+      value: '+92 307 580 4316',
+      link: 'tel:+923075804316'
     },
     {
       icon: MapPin,

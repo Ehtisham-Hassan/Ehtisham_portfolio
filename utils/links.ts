@@ -12,4 +12,5 @@ export const CONTACT = {
     email: 'tahir@dev2c.com',
   },
   calendly: 'https://calendly.com/tahir-dev2c/30min',
+  n8nWebhookDemo: 'http://localhost:5678/webhook-test/chat',
 } as const;
