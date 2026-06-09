@@ -27,7 +27,6 @@ import Navbar from '@/components/Navbar'
 import Services from '@/components/Services'
 import Projects from '@/components/Projects'
 import About from '@/components/About'
-import Contact from '@/components/Contact'
 import toast from 'react-hot-toast'
 
 export default function Home() {
@@ -167,9 +166,6 @@ export default function Home() {
 
       {/* About Section */}
       {/* <About /> */}
-
-      {/* Contact Section */}
-      <Contact />
     </div>
   )
 } 

@@ -1,52 +1,95 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Bot, Zap, Code, Database, Workflow, MessageSquare, Cpu, Globe, Home } from 'lucide-react'
+import { Bot, Zap, Code, Database, Workflow, MessageSquare, Cpu, Globe, Home, PhoneOff,GitMerge, Mic } from 'lucide-react'
 import { CONTACT } from '@/utils/links'
 
 const Services = () => {
-  const services = [
-    {
-      icon: Bot,
-      title: 'Speed-to-Lead AI Agents',
-      description: 'Omnichannel conversational agents that instantly engage and qualify inbound leads 24/7, booking high-intent buyers directly onto your calendar.',
-      features: [
-        'Instant Zillow & Web lead response',
-        'Automated budget qualification',
-        'Direct calendar scheduling',
-        'Omnichannel (SMS, Web, WhatsApp)',
-        'Seamless CRM integration'
-      ],
-      color: 'bg-dev2c-text'
-    },
-    {
-      icon: Zap,
-      title: 'Intelligent Data Extraction',
-      description: 'Automated backend agents that ingest messy contracts, lease agreements, and disclosures, extracting critical terms and mapping them directly into your database.',
-      features: [
-        'PDF & unstructured text parsing',
-        'Contract term extraction (dates, escrow)',
-        'ERP / CRM auto-population',
-        'FastAPI backend architecture',
-        'Zero manual data entry'
-      ],
-      color: 'bg-dev2c-text'
-    },
-    {
-      icon: Home,
-      title: 'Autonomous Property Matchmaker',
-      description: 'Proactive agents that continuously monitor live MLS feeds, curate exact matches based on buyer criteria, and autonomously coordinate showing schedules.',
-      features: [
-        'Live MLS feed monitoring',
-        'Hyper-personalized property curation',
-        'Automated showing requests',
-        'Client preference learning',
-        'End-to-end scheduling workflows'
-      ],
-      color: 'bg-dev2c-text'
-    }
-  ]
-
+  // const services = [
+  //   {
+  //     icon: Bot,
+  //     title: 'Instant Missed-Call Auto-Reply',
+  //     description: 'Omnichannel conversational agents that instantly engage and qualify inbound leads 24/7, booking high-intent buyers directly onto your calendar.',
+  //     features: [
+  //       'Never leave a prospect waiting',
+  //       'Stop them from calling competitors',
+  //       'Direct calendar scheduling',
+  //       'SMS, Web & WhatsApp',
+  //       'Seamless integration'
+  //     ],
+  //     color: 'bg-dev2c-text'
+  //   },
+  //   {
+  //     icon: Zap,
+  //     title: '24/7 AI Voice Assistant',
+  //     description: 'Automated backend agents that ingest messy contracts, lease agreements, and disclosures, extracting critical terms and mapping them directly into your database.',
+  //     features: [
+  //       'Your custom AI agent',
+  //       'will Answer your phone and book follow-up',
+  //       'ERP / CRM auto-population',
+  //       'meetings directly onto your calendar.',
+  //       'Zero manual data entry'
+  //     ],
+  //     color: 'bg-dev2c-text'
+  //   },
+  //   {
+  //     icon: Home,
+  //     title: 'Full Pipeline Integration',
+  //     description: 'Proactive agents that continuously monitor live MLS feeds, curate exact matches based on buyer criteria, and autonomously coordinate showing schedules.',
+  //     features: [
+  //       'We build complete systems',
+  //       'Hyper-personalized property curation',
+  //       'integrate AI agents',
+  //       'CRM and sales pipeline so your lead data is always synced and organized',
+  //       'End-to-end scheduling workflows'
+  //     ],
+  //     color: 'bg-dev2c-text'
+  //   }
+  // ]
+const services = [
+  {
+    icon: PhoneOff, // More specific icon  missed CALL
+    title: 'Instant Missed-Call Auto-Reply',
+    description:
+      'Miss a call and you risk losing the lead to the next agent they dial. Our system fires an instant SMS the moment a call goes unanswered re-engaging the prospect before they move on.',
+    features: [
+      'Never leave a prospect waiting',
+      'Stop them from calling competitors',
+      'Instant SMS & WhatsApp auto-reply',
+      '24/7 automated re-engagement',
+      'Book appointments on autopilot',
+    ],
+    color: 'bg-dev2c-text',
+  },
+  {
+    icon: Mic, 
+    title: '24/7 AI Voice Assistant',
+    description:
+      'Busy at a showing? Your custom AI agent answers every inbound call, handles property FAQs, qualifies the lead, and books follow-up meetings directly onto your calendar without you lifting a finger.',
+    features: [
+      'Answers calls when you\'re unavailable',
+      'Qualifies leads in real time',
+      'Books meetings to your calendar',
+      'Handles property inquiries & FAQs',
+      'Works around the clock, every day',
+    ],
+    color: 'bg-dev2c-text',
+  },
+  {
+    icon: GitMerge, // More specific icon  PIPELINE / integration
+    title: 'Full Pipeline Integration',
+    description:
+      'We don\'t hand you a tool and walk away. We wire every AI agent directly into your existing CRM and sales pipeline — so every lead, note, and follow-up is automatically synced, organized, and ready to close.',
+    features: [
+      'Connects to your existing CRM',
+      'Auto-syncs all lead data & activity',
+      'Zero manual data entry',
+      'End-to-end pipeline visibility',
+      'Built around your current workflow',
+    ],
+    color: 'bg-dev2c-text',
+  },
+]
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
