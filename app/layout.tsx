@@ -46,8 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3734076023303441"
-     crossorigin="anonymous"></script>
+       <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3734076023303441"
+     crossorigin="anonymous"
+         strategy="afterInteractive"/>
       </head>
       
       <body className={`${inter.className} bg-dev2c-bg text-dev2c-text antialiased`}>
